@@ -3,7 +3,7 @@ max_sum = 0
 temp_sum = 0
 
 # Open input file
-with open("day_1.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         # If line is not a whitespace, add to temp_sum; if not, compare max with max_sum
         if line.strip():
