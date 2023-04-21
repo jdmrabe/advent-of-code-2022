@@ -8,7 +8,7 @@ Advent of Code is an annual event consisting of daily programming puzzles throug
 
 ## Solutions
 
-Each day's solution is contained in a separate folder named dayXX where XX represents the day number (01-25). Within each day's folder, you will find a Python file named solution.py containing the solution to that day's puzzle. You can modify the input file provided in each directory to test the solution with different inputs.
+Each day's solution is contained in a separate folder named dayXX where XX represents the day number (01-25). Within each day's folder, you will find a Python file named solution.py and solution2.py containing the solutions for both parts of that day's puzzle. You can modify the input file provided in each directory to test the solution with different inputs.
 
 ## Disclaimer
 
