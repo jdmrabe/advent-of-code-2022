@@ -22,3 +22,7 @@ with open("input.txt", "r") as file:
                 sum += priority_dict[letter]
                 break
 print(sum)
+
+# Note:
+# Using this 3-step for loop is only applicable if the amount of lines is a multiple of the amount of steps.
+# This, however, is enough as a solution for Day 3: Part Two.
