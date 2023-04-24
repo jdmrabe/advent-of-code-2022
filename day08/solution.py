@@ -17,7 +17,7 @@ def visible_x(x, y)->bool:
     """
     Check if any of the sides are all shorter; visible
     """
-    left_half = [tree_map[i][y] for i in range(x - 1, -1, -1)]
+    left_half = [tree_map[i][y] for i in range(0, x)]
     if left_half and max(left_half) < tree_map[x][y]:
             return True
     right_half = [tree_map[i][y] for i in range(x + 1, len(tree_map))]
