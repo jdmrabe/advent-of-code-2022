@@ -17,11 +17,11 @@ def visible_x(x, y)->bool:
     """
     Check if any of the sides are all shorter; visible
     """
-    left_half = [tree_map[i][y] for i in range(0, x)]
-    if left_half and max(left_half) < tree_map[x][y]:
+    left_half = [tree_map[y][i] for i in range(x - 1, -1, -1)]
+    if left_half and max(left_half) < tree_map[y][x]:
             return True
-    right_half = [tree_map[i][y] for i in range(x + 1, len(tree_map))]
-    if right_half and max(right_half) < tree_map[x][y]:
+    right_half = [tree_map[y][i] for i in range(x + 1, len(tree_map[0]))]
+    if right_half and max(right_half) < tree_map[y][x]:
             return True
     #Neither half has all shorter trees; not visible
     return False
@@ -32,11 +32,11 @@ def visible_y(x, y)->bool:
     """
     Check if any of the sides are all shorter; visible
     """
-    top_half = tree_map[x][:y]
-    if top_half and max(top_half) < tree_map[x][y]:
+    top_half = [tree_map[i][x] for i in range(y - 1, -1, -1)]
+    if top_half and max(top_half) < tree_map[y][x]:
             return True
-    bottom_half = tree_map[x][y+1:]
-    if bottom_half and max(bottom_half) < tree_map[x][y]:
+    bot_half = [tree_map[i][x] for i in range(y + 1, len(tree_map))]
+    if bot_half and max(bot_half) < tree_map[y][x]:
             return True
     # Neither half has all shorter trees; not visible
     return False
