@@ -19,7 +19,7 @@ def move_head(line):
 
 def move_tail():
     global tail_pos
-    # Check if not same row or caolumn; order to move diagonally
+    # Check if not same row or column; order to move diagonally
     if (tail_pos[0] != head_pos[0] or tail_pos[1] != head_pos[1]) and \
         (abs(head_pos[0] - tail_pos[0]) >= 2 or abs(head_pos[1] - tail_pos[1]) >= 2):
         if head_pos[0] > tail_pos[0]:
