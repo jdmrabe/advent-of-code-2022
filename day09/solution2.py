@@ -16,7 +16,7 @@ def move_rope(line):
         elif dir == "R":
             rope[0][0] += 1
 
-        # Simulate movement of remaining 9 knots, curr knot is relative prev not (i + 1) in rope list.
+        # Simulate movement of remaining 9 knots, curr knot is relative prev knot at rope(i + 1)
         for i in range(9):
             prev = rope[i]
             curr = rope[i + 1]
