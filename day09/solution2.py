@@ -1,7 +1,6 @@
 visited = [[0,0]]
-# Assign origin coordinates [0,0] to rope 
+# Assign origin coordinates [0,0] to all knots of rope
 rope = [[0,0] for i in range(10)] 
-
 
 def move_rope(line):
     global rope
