@@ -1,5 +1,4 @@
-# DISCLAIMER: I removed the lines with no text from the input file.
-# This is to save the headache by only reading 6 lines at a time.
+# DISCLAIMER: Lines with no text are removed from the input file.
 
 import math
 
