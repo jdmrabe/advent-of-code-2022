@@ -13,8 +13,7 @@ class Monkey:
         self.m_false = mf
         self.count = c
 
-    def inspect(self):
-        global m
+    def inspect(self, m):
         # End turn if there are no items
         if len(self.items) < 0:
             return
@@ -28,12 +27,12 @@ class Monkey:
             else:
                 m[self.m_false].items.append(buffer)
 
-def start_rounds(n):
+def start_rounds(n, monkeys, m):
     for _ in range(n):
         for i in range(len(monkeys)):
-            m[i].inspect()
+            m[i].inspect(m)
 
-# Initially contain all monkeys
+# Create monkeys
 monkeys = []
 with open("input.txt", "r") as f:
     while True:
@@ -51,12 +50,12 @@ with open("input.txt", "r") as f:
         except StopIteration:
             break
 
-# Create monkey dict with usage: m[name]
+# Create dict for monkeys. Usage: m[name]
 m = {}
 for monkey in monkeys:
     m[monkey.name] = monkey
 
-start_rounds(20)
+start_rounds(20, monkeys, m)
 
 mb = []
 for i in range(len(monkeys)):
