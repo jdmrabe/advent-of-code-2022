@@ -1,4 +1,8 @@
 # DISCLAIMER: I have modified the input file for easier parsing.
+# I will never complete part 2 without the knowledge of using module arithmethic.
+# All credit goes to hyper-neutrino from his video: https://www.youtube.com/watch?v=F4MCuPZDKog.
+
+import math
 
 class Monkey:
     def __init__(self, n, i, o, t, mt, mf, c):
@@ -18,7 +22,8 @@ class Monkey:
             buffer = self.items[0]
             self.items.pop(0)
             self.count += 1
-            buffer = eval(self.op, {'old': buffer}) // 3
+            buffer = eval(self.op, {'old': buffer})
+            buffer %= mod
             if buffer % self.test == 0:
                 m[self.m_true].items.append(buffer)
             else:
@@ -47,12 +52,20 @@ with open("input.txt", "r") as f:
         except StopIteration:
             break
 
+
+
 # Create dict for monkeys. Usage: m[name]
 m = {}
 for monkey in monkeys:
     m[monkey.name] = monkey
 
-start_rounds(20, monkeys, m)
+# Compute for the modulus
+mod = 1
+for i in range(len(monkeys)):
+    mod *= m[i].test
+
+start_rounds(10000, monkeys, m)
+
 
 mb = []
 for i in range(len(monkeys)):
